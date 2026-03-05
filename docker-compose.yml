@@ -1,0 +1,7 @@
+services:
+  datavis-final:
+    container_name: datavis-final
+    build: .
+    ports:
+      - "8502:8501"
+    restart: unless-stopped
