@@ -1,0 +1,90 @@
+{
+  "chart": {
+    "title": "Fertility rate vs. Human Development Index",
+    "subtitle": "The [total fertility rate](#dod:fertility-rate), in one particular year. The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable, and a decent standard of living.",
+    "citation": "UN, World Population Prospects (2024); UNDP, Human Development Report (2025)",
+    "originalChartUrl": "https://ourworldindata.org/grapher/children-per-woman-vs-human-development-index?v=1&csvType=full&useColumnShortNames=false",
+    "selection": []
+  },
+  "columns": {
+    "Fertility rate - Sex: all - Age: all - Variant: estimates": {
+      "titleShort": "Fertility rate, total",
+      "titleLong": "Fertility rate, total - UN WPP",
+      "descriptionShort": "The average number of live births a hypothetical cohort of women would have at the end of their reproductive period if they were subject during their whole lives to the fertility rates of a given period and if they were not subject to mortality.",
+      "descriptionKey": [
+        "It is expressed as live births per woman. For age-specific fertility rates, it measures the number of births to women in a particular age group, divided by the number of women in that age group. The age groups used are: 15-19, 20-24, ..., 45-49. The data refer to annual civil calendar years from 1 January to 31 December."
+      ],
+      "unit": "live births per woman",
+      "timespan": "1950-2023",
+      "type": "Numeric",
+      "owidVariableId": 950920,
+      "shortName": "fertility_rate__sex_all__age_all__variant_estimates",
+      "lastUpdated": "2024-07-12",
+      "citationShort": "UN, World Population Prospects (2024) – processed by Our World in Data",
+      "citationLong": "UN, World Population Prospects (2024) – processed by Our World in Data. “Fertility rate, total – UN WPP” [dataset]. United Nations, “World Population Prospects” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/950920.metadata.json"
+    },
+    "Human Development Index": {
+      "titleShort": "Human Development Index",
+      "titleLong": "Human Development Index",
+      "descriptionShort": "The Human Development Index (HDI) is a summary measure of key dimensions of human development: a long and healthy life, a good education, and a decent standard of living. Higher values indicate higher human development.",
+      "descriptionKey": [
+        "The Human Development Index (HDI) provides a broad, intuitive measure for comparing overall human progress across countries and over time. A higher HDI implies longer, healthier lives, better education and higher command over resources; however, it does not capture inequality, sustainability or subjective wellbeing",
+        "It is a composite summary of a country's average achievement in three basic dimensions of human development – health (life expectancy), knowledge (schooling) and material wellbeing (GNI per capita) – combined through a geometric mean into a single 0‑to‑1 score.",
+        "Each dimension of the HDI is captured by a specific index:\n  - **Healthy life**: Captured by the _Life Expectancy Index_, which is based on life expectancy at birth.\n  - **Good education (knowledge)**: Captured by _Education Index_, which is based on the expected and mean years of schooling.\n  - **Decent standard of living**: Captured by _Gross National Income (GNI) Index_, which is based on the GNI per capita (PPP$).",
+        "The index is estimated by normalizing and aggregating the above indicators. First, the indicators are brought onto the same scale, ranging from 0 to 1. This is done by setting minimum and maximum values for each indicator. The minimum and maximum values for each indicator are defined as follows:\n  - Life expectancy at birth ranges between 20 and 85 years\n  - Expected years of schooling between 0 and 18 years; Mean years of schooling, between 0 and 15 years\n  - GNI per capita between 100 and 75,000 international-$ at 2021 prices.",
+        "The HDI is then estimated as the geometric mean of these indices. The education index is the arithmetic mean (average) of the mean years of schooling and expected years of schooling."
+      ],
+      "unit": "",
+      "timespan": "1990-2023",
+      "type": "Numeric",
+      "owidVariableId": 1032439,
+      "shortName": "hdi__sex_total",
+      "lastUpdated": "2025-05-07",
+      "nextUpdate": "2026-05-07",
+      "citationShort": "UNDP, Human Development Report (2025) – with minor processing by Our World in Data",
+      "citationLong": "UNDP, Human Development Report (2025) – with minor processing by Our World in Data. “Human Development Index – UNDP” [dataset]. UNDP, Human Development Report, “Human Development Report” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1032439.metadata.json"
+    },
+    "Population (historical)": {
+      "titleShort": "Population",
+      "titleLong": "Population",
+      "descriptionShort": "Population by country, available from 10,000 BCE to 2023, based on data and estimates from different sources.",
+      "descriptionKey": [
+        "Population is the most commonly used metric throughout Our World in Data. It is used directly to understand population growth over time, and indirectly to calculate per-capita indicators, making it easier to compare countries of different sizes.",
+        "We construct this indicator by combining multiple sources covering different periods.\n  - HYDE v3.3 (2023): historical estimates from 10,000 BCE to 1799.\n  - Gapminder v7 (2022): for 1800-1949.\n  - UN World Population Prospects (2024): for 1950 onwards, including 2100 projections.\n  - Gapminder Systema Globalis (2023): additional source for former countries (Yugoslavia, USSR, etc.)",
+        "Breaks in the data may occur at the boundaries between sources due to their methodological differences.",
+        "You can read more about the sources and methodology in our [dedicated article](https://ourworldindata.org/population-sources). We also provide a table of sources showing the source we use for each country-year.",
+        "We calculate geographical aggregates (continents, income groups, etc.) by summing individual country populations. For years before 1800, we rely directly on HYDE's values for continents to ensure historical consistency."
+      ],
+      "descriptionProcessing": "### Combination of different sources\nWe construct our long-run population data by combining multiple sources:\n\n- 10,000 BCE–1799: historical estimates by HYDE (v3.3).\n\n- 1800–1949: historical estimates by Gapminder (v7).\n\n- 1950–2023: population records from the United Nations World Population Prospects (2024 revision).\n\n**Geographical aggregates**\n\n- For most years, we calculate aggregates by summing the population of member countries.\n- We do this based on [our definition of continents](https://ourworldindata.org/world-region-map-definitions#our-world-in-data) and the [World Bank’s income groups](https://ourworldindata.org/grapher/world-bank-income-groups).\n- The only exception is before 1800, where we use HYDE's estimates for continents (but not income groups).\n\nFor most of the years, we've estimated regional aggregates by summing the population of countries in each region. We've relied on [our continents](https://ourworldindata.org/world-region-map-definitions#our-world-in-data) and [World Bank income group definitions](https://ourworldindata.org/grapher/world-bank-income-groups). The only exception is before 1800, where we've used HYDE's estimates on continents (but not income groups).\n\n**World**\n- Before 1800: we use data from HYDE.\n- 1800-1950: we estimate the global population by summing all available countries in the dataset.\n- After 1950, we rely on estimates from the United Nations World Population Prospects.",
+      "shortUnit": "",
+      "unit": "people",
+      "timespan": "-10000-2023",
+      "type": "Integer",
+      "owidVariableId": 953903,
+      "shortName": "population_historical",
+      "lastUpdated": "2024-07-15",
+      "nextUpdate": "2026-07-15",
+      "citationShort": "HYDE (2023); Gapminder (2022); UN WPP (2024) – with major processing by Our World in Data",
+      "citationLong": "HYDE (2023); Gapminder (2022); UN WPP (2024) – with major processing by Our World in Data. “Population – HYDE, Gapminder, UN – Long-run data” [dataset]. PBL Netherlands Environmental Assessment Agency, “History Database of the Global Environment 3.3”; Gapminder, “Population v7”; United Nations, “World Population Prospects”; Gapminder, “Systema Globalis” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/953903.metadata.json"
+    },
+    "World region according to OWID": {
+      "titleShort": "World region according to OWID",
+      "titleLong": "World region according to OWID",
+      "descriptionShort": "Regions defined by Our World in Data, which are used in OWID charts and maps.",
+      "unit": "",
+      "timespan": "2023-2023",
+      "type": "Continent",
+      "owidVariableId": 900801,
+      "shortName": "owid_region",
+      "lastUpdated": "2023-01-01",
+      "citationShort": "Our World in Data – processed by Our World in Data",
+      "citationLong": "Our World in Data – processed by Our World in Data. “World region according to OWID” [dataset]. Our World in Data, “Regions” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/900801.metadata.json"
+    }
+  },
+  "dateDownloaded": "2026-03-05",
+  "activeFilters": {}
+}
