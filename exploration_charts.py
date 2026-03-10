@@ -150,6 +150,9 @@ def build_exploration_charts():
     # 6) VISUALIZATIONS (fixed indentation + missing traj)
     # ============================================================
 
+    REGION_DOMAIN = ["Africa", "Asia", "Europe", "North America", "Oceania", "South America"]
+    shared_region_scale = alt.Scale(domain=REGION_DOMAIN, scheme="tableau10")
+
     # ---------- final (map + linked lines) ----------
     world = data.world_110m.url
 
@@ -311,7 +314,7 @@ def build_exploration_charts():
         .encode(
             x=alt.X("x_value:Q", title=None),
             y=alt.Y("Δ Fertility rate:Q", title="Change in Fertility Rate (2023 − 1990)"),
-            color=alt.Color("World region according to OWID:N", title="Region"),
+            color=alt.Color("World region according to OWID:N", title="Region", scale=shared_region_scale),
             opacity=alt.condition(region_sel_sc, alt.value(0.9), alt.value(0.08)),
             tooltip=[
                 alt.Tooltip("Country:N"),
@@ -334,8 +337,7 @@ def build_exploration_charts():
 
     r = chg_small.dropna(subset=["Δ Fertility rate", "Δ Human Development Index"]).copy()
     r["CountryLabel"] = r["Country"] + " (" + r["World region according to OWID"] + ")"
-    regions_rank = sorted([x for x in r["World region according to OWID"].dropna().unique()])
-    region_scale = alt.Scale(domain=regions_rank, scheme="tableau10")
+    region_scale = shared_region_scale
 
     rank_metric = alt.param(
         name="rank_metric",
@@ -580,8 +582,7 @@ def build_exploration_charts():
         empty="all"
     )
 
-    regions_traj = sorted([rr for rr in traj["World region according to OWID"].dropna().unique()])
-    region_scale_traj = alt.Scale(domain=regions_traj, scheme="tableau10")
+    region_scale_traj = shared_region_scale
 
     y_min = float(traj["Fertility rate"].min())
     y_max = float(traj["Fertility rate"].max())

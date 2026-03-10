@@ -1,3 +1,7 @@
 streamlit
 altair
 pandas
+vegafusion
+vl-convert-python>=1.6.0
+pycountry
+vega_datasets
